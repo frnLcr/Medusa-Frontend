@@ -16,6 +16,8 @@ import "./styles/styles.css"
 import Image from "next/image"
 import { Loader } from "../../../../../public"
 import useIsMobile from "@lib/hooks/useIsMobile"
+import { getProducts } from "@lib/util/getProducts"
+
 
 const ProductCarousel: React.FC = () => {
     const [products, setProducts] = useState<any[]>([])
@@ -27,32 +29,14 @@ const ProductCarousel: React.FC = () => {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            try {
-                const response = await fetch("https://medusa-backend-production-4287.up.railway.app/store/products",
-                    {
-                        method: "GET",
-                        headers: {
-                            "x-publishable-api-key":
-                                process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY ?? "",
-                        },
-                    })
+            const { products, error } = await getProducts();
+            setProducts(products);
+            setError(error);
+            setLoading(false);
+        };
 
-                if (!response.ok) {
-                    throw new Error("Network response was not ok")
-                }
-
-                const data = await response.json()
-                setProducts(data.products)
-            } catch (error: any) {
-                console.error("Error fetching products:", error)
-                setError(error.message)
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        fetchProducts()
-    }, [])
+        fetchProducts();
+    }, []);
 
     if (loading) {
         return (
@@ -73,6 +57,7 @@ const ProductCarousel: React.FC = () => {
     if (error) {
         return <div>Error: {error}</div>
     }
+
     const onAutoplayTimeLeft = (
         s: SwiperType,
         time: number,
