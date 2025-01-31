@@ -28,7 +28,7 @@ const ProductCarousel: React.FC = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch(`${process.env.MEDUSA_BACKEND_URL}/store/products`, {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/store/products`, {
                     method: "GET",
                     headers: {
                         "x-publishable-api-key": process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY ?? "",
