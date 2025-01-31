@@ -16,8 +16,6 @@ import "./styles/styles.css"
 import Image from "next/image"
 import { Loader } from "../../../../../public"
 import useIsMobile from "@lib/hooks/useIsMobile"
-import { getProducts } from "@lib/util/getProducts"
-
 
 const ProductCarousel: React.FC = () => {
     const [products, setProducts] = useState<any[]>([])
@@ -29,14 +27,32 @@ const ProductCarousel: React.FC = () => {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const { products, error } = await getProducts();
-            setProducts(products);
-            setError(error);
-            setLoading(false);
-        };
+            try {
+                const backendUrl = process.env.MEDUSA_BACKEND_URL;
+                const response = await fetch(`${backendUrl}/store/products`, {
+                    method: "GET",
+                    headers: {
+                        "x-publishable-api-key":
+                            process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY ?? "",
+                    },
+                })
 
-        fetchProducts();
-    }, []);
+                if (!response.ok) {
+                    throw new Error("Network response was not ok")
+                }
+
+                const data = await response.json()
+                setProducts(data.products)
+            } catch (error: any) {
+                console.error("Error fetching products:", error)
+                setError(error.message)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        fetchProducts()
+    }, [])
 
     if (loading) {
         return (
