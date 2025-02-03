@@ -19,7 +19,24 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['mxhespmiksgzcexvfqoc.supabase.co', 'localhost'], // Agrega localhost
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "mxhespmiksgzcexvfqoc.supabase.co",
+      },
+      {
+        protocol: "https",
+        hostname: "medusa-public-images.s3.eu-west-1.amazonaws.com",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+      },
+      {
+        protocol: "https",
+        hostname: "localhost",
+      },
+    ],
   },
 }
 
