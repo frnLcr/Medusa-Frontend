@@ -18,7 +18,7 @@ import { Loader } from "../../../../../public"
 import useIsMobile from "@lib/hooks/useIsMobile"
 import { getProducts } from "@lib/util/getProducts";
 
-const ProductCarousel: React.FC = () => {
+const ProductCarousel: React.FC = (product) => {
     const [products, setProducts] = useState<any[]>([])
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
@@ -40,16 +40,8 @@ const ProductCarousel: React.FC = () => {
 
     if (loading) {
         return (
-            <div
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "600px",
-                    width: "100%",
-                }}
-            >
-                <Image src={Loader} alt="Loading" width={15} height={15} />
+            <div className="loading">
+                <Image src={Loader} alt="Loading" width={15} height={15} unoptimized />
             </div>
         )
     }
@@ -83,11 +75,11 @@ const ProductCarousel: React.FC = () => {
     }
 
     return (
-        <div className="w-full h-[600px] flex items-center justify-center bg-gray-100">
+        <div className="w-full h-[500px] flex items-center justify-center bg-gray-100">
             <div className="w-full max-w-full h-full">
                 <Swiper
                     effect="coverflow"
-                    slidesPerView={isMobile ? 1 : 2}
+                    slidesPerView={isMobile ? 1 : 3}
                     spaceBetween={20}
                     centeredSlides={true}
                     coverflowEffect={{

@@ -113,6 +113,14 @@ export default function ProductActions({
     setIsAdding(false)
   }
 
+  const handleQuotation = () => {
+    const message = `Hola! Quiero solicitar información sobre el producto: ${product.title}`;
+    const phoneNumber = '+5493516165091'; // Número de WhatsApp
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, '_blank');
+  };
+
   return (
     <>
       <div className="flex flex-col gap-y-2" ref={actionsRef}>
@@ -140,26 +148,36 @@ export default function ProductActions({
 
         <ProductPrice product={product} variant={selectedVariant} />
 
-        <Button
-          onClick={handleAddToCart}
-          disabled={
-            !inStock ||
-            !selectedVariant ||
-            !!disabled ||
-            isAdding ||
-            !isValidVariant
-          }
-          variant="primary"
-          className="w-full h-10"
-          isLoading={isAdding}
-          data-testid="add-product-button"
-        >
-          {!selectedVariant && !options
-            ? "Select variant"
-            : !inStock || !isValidVariant
-            ? "Out of stock"
-            : "Add to cart"}
-        </Button>
+        <div className="flex flex-row gap-x-2">
+          <Button
+            onClick={handleAddToCart}
+            disabled={
+              !inStock ||
+              !selectedVariant ||
+              !!disabled ||
+              isAdding ||
+              !isValidVariant
+            }
+            variant="primary"
+            className="w-full h-10"
+            isLoading={isAdding}
+            data-testid="add-product-button"
+          >
+            {!selectedVariant && !options
+              ? "Select variant"
+              : !inStock || !isValidVariant
+                ? "Out of stock"
+                : "Add to cart"}
+          </Button>
+          <Button
+            onClick={handleQuotation}
+            variant="secondary"
+            className="w-full h-10"
+            isLoading={isAdding}
+          >
+            Solicitar Cotizacion
+          </Button>
+        </div>
         <MobileActions
           product={product}
           variant={selectedVariant}
