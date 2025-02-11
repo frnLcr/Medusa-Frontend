@@ -18,7 +18,7 @@ import { Loader } from "../../../../../public"
 import useIsMobile from "@lib/hooks/useIsMobile"
 import { getProducts } from "@lib/util/getProducts";
 
-const ProductCarousel: React.FC = (product) => {
+const ProductCarousel: React.FC = () => {
     const [products, setProducts] = useState<any[]>([])
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
