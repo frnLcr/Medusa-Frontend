@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react"
 import { Button, clx } from "@medusajs/ui"
 import React, { Fragment, useMemo } from "react"
-
+import RequestQuote from "../request-quote"
 import useToggleState from "@lib/hooks/use-toggle-state"
 import X from "@modules/common/icons/x"
 
@@ -47,14 +47,6 @@ const MobileActions: React.FC<MobileActionsProps> = ({
 
     return variantPrice || cheapestPrice || null
   }, [price])
-
-  const handleQuotation = () => {
-    const message = `Hola! Quiero solicitar información sobre el producto: ${product.title}`;
-    const phoneNumber = '+5493516165091'; // Número de WhatsApp
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-    window.open(url, '_blank');
-  };
 
   return (
     <>
@@ -116,14 +108,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                     ? "Out of stock"
                     : "Add to cart"}
               </Button>
-              <Button
-                onClick={handleQuotation}
-                variant="secondary"
-                className="w-full"
-
-              >
-                Solicitar Cotizacion
-              </Button>
+              <RequestQuote product={product} />
             </div>
           </div>
         </Transition>

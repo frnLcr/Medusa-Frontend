@@ -75,7 +75,7 @@ const ProductCarousel: React.FC = () => {
     }
 
     return (
-        <div className="w-full h-[500px] flex items-center justify-center bg-gray-100">
+        <div className="w-full h-[500px] flex items-center justify-center bg-[#EEEEEE]">
             <div className="w-full max-w-full h-full">
                 <Swiper
                     effect="coverflow"

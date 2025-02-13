@@ -11,6 +11,7 @@ import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
 import ProductPrice from "../product-price"
 import MobileActions from "./mobile-actions"
+import RequestQuote from "../request-quote"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -113,14 +114,6 @@ export default function ProductActions({
     setIsAdding(false)
   }
 
-  const handleQuotation = () => {
-    const message = `Hola! Quiero solicitar información sobre el producto: ${product.title}`;
-    const phoneNumber = '+5493516165091'; // Número de WhatsApp
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-    window.open(url, '_blank');
-  };
-
   return (
     <>
       <div className="flex flex-col gap-y-2" ref={actionsRef}>
@@ -169,14 +162,7 @@ export default function ProductActions({
                 ? "Out of stock"
                 : "Add to cart"}
           </Button>
-          <Button
-            onClick={handleQuotation}
-            variant="secondary"
-            className="w-full h-10"
-            isLoading={isAdding}
-          >
-            Solicitar Cotizacion
-          </Button>
+          <RequestQuote product={product} />
         </div>
         <MobileActions
           product={product}

@@ -139,7 +139,7 @@ const CartDropdown = ({
                                     href={`/products/${item.product_handle}`}
                                     data-testid="product-link"
                                   >
-                                    {item.title}
+                                    {item.product_title}
                                   </LocalizedClientLink>
                                 </h3>
                                 <LineItemOptions
@@ -175,7 +175,7 @@ const CartDropdown = ({
                     ))}
                 </div>
                 <div className="p-4 flex flex-col gap-y-4 text-small-regular">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between hidden"> // hidden price in the frontend
                     <span className="text-ui-fg-base font-semibold">
                       Subtotal{" "}
                       <span className="font-normal">(excl. taxes)</span>

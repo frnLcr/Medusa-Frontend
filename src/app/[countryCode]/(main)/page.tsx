@@ -7,7 +7,7 @@ import { getRegion } from "@lib/data/regions"
 import ProductCarousel from "@modules/home/components/product-carousel/page"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "Importadora Latinoamericana",
   description:
     "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
 }
