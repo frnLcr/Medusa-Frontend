@@ -72,7 +72,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
             <div className="flex items-center gap-x-2">
               <span data-testid="mobile-title">{product.title}</span>
 
-              {selectedPrice ? (
+              {/*{selectedPrice ? (
                 <div className="flex items-end gap-x-2 text-ui-fg-base">
                   {selectedPrice.price_type === "sale" && (
                     <p>
@@ -92,7 +92,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                 </div>
               ) : (
                 <div></div>
-              )}
+              )}*/} {/* precio oculto en frontend */}
             </div>
             <div className="grid grid-cols-2 w-full gap-x-4">
               <Button
