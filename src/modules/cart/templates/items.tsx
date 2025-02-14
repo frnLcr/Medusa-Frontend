@@ -17,9 +17,9 @@ const ItemsTemplate = ({ cart }: ItemsTemplateProps) => {
       </div>
       <Table>
         <Table.Header className="border-t-0">
-          <Table.Row className="text-ui-fg-subtle txt-medium-plus bg-[#EEEEEE]">
-            <Table.HeaderCell className="!pl-0 text-left">Item</Table.HeaderCell>
-            <Table.HeaderCell className="text-right">Quantity</Table.HeaderCell>
+          <Table.Row className="text-ui-fg-subtle txt-medium-plus bg-[#EEEEEE] hover:bg-[#EEEEEE]">
+            <Table.HeaderCell className="!pl-0 text-left bg-[#EEEEEE] hover:bg-[#EEEEEE]">Item</Table.HeaderCell>
+            <Table.HeaderCell className="text-right bg-[#EEEEEE] hover:bg-[#EEEEEE]">Quantity</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
