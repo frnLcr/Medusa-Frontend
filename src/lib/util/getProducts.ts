@@ -1,8 +1,6 @@
 export const getProducts = async () => {
     try {
-        // Usamos la variable de entorno para el backend
-        const backendUrl = "https://medusa-backend-production-4287.up.railway.app";
-        //const backendUrl = "http://localhost:9000";
+        const backendUrl = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL;
         const response = await fetch(`${backendUrl}/store/products`, {
             method: "GET",
             mode: "cors",
