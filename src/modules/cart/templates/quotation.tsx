@@ -17,7 +17,7 @@ const Quatition = ({ cart }: QuotationProps) => {
             mensaje += `- ${item.product_title} (x${item.quantity})\n`;
         });
 
-        const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        const url = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(mensaje)}`;
         window.open(url, "_blank");
     };
 

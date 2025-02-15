@@ -25,6 +25,7 @@ const ItemsTemplate = ({ cart }: ItemsTemplateProps) => {
         <Table.Body>
           {items
             ? items
+              .slice()
               .sort((a, b) => {
                 return (a.created_at ?? "") > (b.created_at ?? "") ? -1 : 1
               })
