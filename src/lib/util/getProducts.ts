@@ -1,9 +1,6 @@
 export const getProducts = async () => {
     try {
         const backendUrl = process.env.MEDUSA_BACKEND_URL;
-        console.log("backendUrl:", backendUrl);
-        console.log("backend", process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL);
-        console.log("backend 2", process.env.MEDUSA_BACKEND_URL)
         const response = await fetch(`${backendUrl}/store/products`, {
             method: "GET",
             mode: "cors",
