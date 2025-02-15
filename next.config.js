@@ -38,6 +38,10 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    NEXT_PUBLIC_MEDUSA_BACKEND_URL: process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL,
+    MEDUSA_BACKEND_URL: process.env.MEDUSA_BACKEND_URL
+  },
 }
 
 module.exports = nextConfig
