@@ -1,6 +1,8 @@
 import { listCategories } from "@lib/data/categories"
 import { listCollections } from "@lib/data/collections"
 import { Text, clx } from "@medusajs/ui"
+import Image from "next/image"
+import { Logo } from "../../../../../public"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
@@ -14,13 +16,20 @@ export default async function Footer() {
   return (
     <footer className="border-t border-ui-border-base w-full bg-[#EEEEEE]">
       <div className="content-container flex flex-col w-full">
-        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
+        <div className="flex flex-col gap-y-6 xsmall:flex-row items-center justify-between lg:pb-40 pb-20 lg:pt-40 pt-20">
           <div>
             <LocalizedClientLink
               href="/"
               className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
             >
-              Importadora Latinoamericana
+              <Image
+                src={Logo}
+                alt="Logo"
+                width={190}
+                layout="fixed"
+                className="pr-2 pb-6 lg:w-[290px]"
+              />
+
             </LocalizedClientLink>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
