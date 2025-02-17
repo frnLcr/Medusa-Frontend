@@ -66,14 +66,6 @@ const ProductCarousel: React.FC = () => {
         }
     }
 
-    // Función para convertir el título en un slug
-    const slugify = (text: string): string => {
-        return text
-            .toLowerCase()
-            .replace(/ /g, "-") // Reemplazar espacios con guiones
-            .replace(/[^\w-]+/g, "") // Eliminar caracteres especiales
-    }
-
     return (
         <div className="w-full h-[500px] flex items-center justify-center bg-[#EEEEEE]">
             <div className="w-full max-w-full h-full">
@@ -101,13 +93,13 @@ const ProductCarousel: React.FC = () => {
                     onAutoplayTimeLeft={onAutoplayTimeLeft}
                     className="w-full h-full mySwiper"
                 >
-                    {products.map((product, index) => (
+                    {products.map((product) => (
                         <SwiperSlide
-                            key={index}
+                            key={product.id}
                             className="flex flex-col items-center justify-center text-center"
                         >
                             <Link
-                                href={`/products/${slugify(product?.title ?? "")}`}
+                                href={`/products/${product.handle}`}
                                 passHref
                             >
                                 <div className="flex flex-col items-center justify-center text-center h-full">
