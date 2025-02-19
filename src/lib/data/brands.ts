@@ -1,0 +1,17 @@
+export const brands = [
+    { name: 'Epson', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//epson.png" },
+    { name: 'Symbol', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//symbol.png" },
+    { name: 'Zebra', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//zebra.svg" },
+    { name: 'Opticon', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//opticon.png" },
+    { name: 'Logitech', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//logitech.png" },
+    { name: 'Hasar', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//hasar.webp" },
+    { name: 'Lenovo', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//lenovo.png" },
+    { name: '3NStar', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//3nstar.png" },
+    { name: 'Kretz', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//kretz.png" },
+    { name: 'Datalogic', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//datalogic.png" },
+    {name: 'Motorola', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//motorola.png"},
+    {name: 'Honeywell', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//honeywell.png"},
+    {name: 'HP', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//hp.png"},
+    {name: 'Posiflex', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//posiflex.png"},
+    {name: 'CX', image: "https://mxhespmiksgzcexvfqoc.supabase.co/storage/v1/object/public/brands-images//cx.png"},
+];

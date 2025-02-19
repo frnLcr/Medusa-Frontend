@@ -5,6 +5,7 @@ import FeaturedProducts from "@modules/home/components/featured-products"
 import { listCollections } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 import ProductCarousel from "@modules/home/components/product-carousel/page"
+import BrandCarousel from "@modules/home/components/brands-carousel/page"
 
 export const metadata: Metadata = {
   title: "Importadora Latinoamericana",
@@ -37,6 +38,7 @@ export default async function Home(props: Readonly<{
           <FeaturedProducts collections={collections} region={region} />
         </ul>
       </div>
+      <BrandCarousel />
     </>
   )
 }
